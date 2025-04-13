@@ -1,0 +1,21 @@
+<%= form_with model: food do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :serving_size %>
+    <%= form.number_field :serving_size %>
+  </div>
+  <div>
+    <%= form.label :carbs %>
+    <%= form.number_field :carbs %>
+  </div>
+  <div>
+    <%= form.label :notes, style: "display block" %>
+    <%= form.rich_text_area :notes %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Meals</h1>
+
+<div id="meals">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ingredients</th>
+        <th>Carbs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @meals.each do |meal| %>
+        <tr>
+          <td>
+            <%= link_to meal.name, meal %>
+          </td>
+          <td>
+            <%= meal.calculate_carbs %>g
+          </td>
+        </tr>    
+      <% end %>
+    </tbody>
+</div>

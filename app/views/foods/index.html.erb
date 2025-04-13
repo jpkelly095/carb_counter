@@ -1,0 +1,35 @@
+<h1>Foods</h1>
+<%= link_to "New food", new_food_path %>
+<div id="foods">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Serving Size</th>
+        <th>Carbs</th>
+        <th>Notes</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td>
+            <%= link_to food.name, food %>
+          </td>
+          <td>
+            <%= food.serving_size %>g
+          </td>
+          <td>
+            <%= food.carbs %>g
+          </td>
+          <td>
+            <%= food.notes %>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_food_path(food) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </div>

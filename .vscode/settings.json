@@ -1,0 +1,4 @@
+{
+    "editor.stickyScroll.enabled": true,
+    "emmet.includeLanguages": { "erb": "html", "ruby": "html" }
+}

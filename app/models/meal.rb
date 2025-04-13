@@ -1,4 +1,5 @@
 class Meal < ApplicationRecord
+  has_rich_text :notes
   has_many :ingredients
   has_many :foods, through: :ingredients
 
