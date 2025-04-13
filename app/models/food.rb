@@ -1,5 +1,5 @@
 class Food < ApplicationRecord
   def calculate_carbs(quantity)
-    quantity / self.serving_size * self.carbs
+    (quantity.fdiv(self.serving_size) * self.carbs).round
   end
 end

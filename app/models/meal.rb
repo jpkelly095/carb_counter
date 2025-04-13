@@ -1,11 +1,8 @@
 class Meal < ApplicationRecord
   has_many :ingredients
+  has_many :foods, through: :ingredients
 
   def calculate_carbs
-    count = 0
-    self.ingredients.each do |i|
-      count += i.food.calculate_carbs(i.quantity)
-    end
-    count
+    foods.sum { |food| food.calculate_carbs(ingredients.find_by(food: food).quantity)}
   end
 end
